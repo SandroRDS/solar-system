@@ -1,0 +1,53 @@
+@import './global.scss'; 
+
+@mixin styled-header-logo($header-height, $font-size, $img-width, $img-height, $adjust) {
+  h1 {
+    text-transform: uppercase;
+    font-weight: 200;
+    font-size: $font-size;
+  }
+
+  img {
+    position: absolute;
+    top: calc($header-height / 2 - $img-height / 2 + $adjust);
+    
+    width: $img-width;
+    height: $img-height;
+  }
+}
+
+.cabecalho {
+  $header-height: 20vmax; 
+  $font-size: 2em; 
+  $img-width: 130px; 
+  $img-height: 90px; 
+  $adjust: 6px;
+
+  @include centralized-container(100%, $header-height);
+  @include styled-header-logo($header-height, $font-size, $img-width, $img-height, $adjust);
+}
+
+@media screen and (min-width: 600px) {
+  .cabecalho {
+    $header-height: 20vmax; 
+    $font-size: 2.4em; 
+    $img-width: 160px; 
+    $img-height: 110px; 
+    $adjust: 10px;
+  
+    @include styled-header-logo($header-height, $font-size, $img-width, $img-height, $adjust);
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .cabecalho {
+    $header-height: 25vh; 
+    $font-size: 2.4em; 
+    $img-width: 160px; 
+    $img-height: 100px; 
+    $adjust: 10px;
+    
+    height: $header-height;
+    @include styled-header-logo($header-height, $font-size, $img-width, $img-height, $adjust);
+  }
+}

@@ -1,0 +1,26 @@
+@import '../styles/global';
+
+.missions {
+  background-color: $bg-mission;
+  
+  margin: 10px auto;
+  padding: 15px;
+  border-radius: 15px;
+
+  @include centralized-container(90%, auto, column, flex-start, center);
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+@media screen and (min-width: 992px) {
+  .missions {
+    display: grid;
+    justify-content: space-evenly;
+    gap: 20px 0;
+    grid-template-columns: repeat(2, 40%);
+
+    .title {
+      grid-column: span 2;
+    }
+  }
+}

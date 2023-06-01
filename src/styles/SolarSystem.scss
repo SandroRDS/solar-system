@@ -1,0 +1,17 @@
+@import '../styles/global';
+
+.solar-system {
+  @include centralized-container(100%, auto, column, flex-start, center);
+}
+
+@media screen and (min-width: 992px) {
+  .solar-system {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(8, calc(100%/9));
+    
+    .title {
+      grid-column: span 9;
+    }
+  }
+}

@@ -1,0 +1,47 @@
+@import '../styles/global';
+
+.planet-card {
+  @include centralized-container(80%, auto, column, flex-start, center);
+  transition: all 400ms;
+  margin-bottom: 50px;
+
+  .planet {
+    width: 90%;
+    transition: inherit;
+  }
+
+  img {
+    width: 100%;
+    transition: inherit;
+  }
+
+  p {
+    font-weight: 300;
+    font-size: 1.3em;
+    transition: inherit;
+  }
+
+  &:hover {
+    transform: scale(1.1);
+
+    img {
+      filter: drop-shadow(-5px 5px 1px rgb(29, 9, 46));
+    }
+
+    p {
+      text-shadow: -1px 1px orangered;
+    }
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .planet-card {
+    width: 60%;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .planet-card {
+    width: 100%;
+  }
+}
